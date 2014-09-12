@@ -1,0 +1,44 @@
+
+
+public class studentRecordsProgram
+{
+   private String name;         
+   private String id;
+   private String major;
+   
+   public studentRecordsProgram(String n, String i, String m)
+   {
+      name = n;
+      id = i;
+      major = m;
+   }
+       
+   public void setName(String n)
+   {
+      name = n;
+   }
+          
+   public void setId(String i)
+   {
+      id = i;
+   }
+   
+   public void setMajor(String m)
+   {
+     major = m;
+   }
+     
+   public String getName()
+   {
+      return name;
+   }
+         
+   public String getId()
+   {
+      return id;
+   }
+   public String getMajor()
+   {
+     return major;
+   }
+}

@@ -23,7 +23,7 @@ public class PasswordVerifier
    {
       boolean status; // Validity status
       
-      if (str.length() >= MIN_PASSWORD_LENGTH /*&& hasUpperCase(str) /* && hasLowerCase(str)*/ && hasDigit(str))
+      if (str.length() >= MIN_PASSWORD_LENGTH && hasUpperCase(str) && hasLowerCase(str) && hasDigit(str))
          status = true;
       else
          status = false;
@@ -37,16 +37,8 @@ public class PasswordVerifier
    
    private static boolean hasUpperCase(String str)
    {
-      boolean huc = str.equals(str.toUpperCase());
-      if(huc)
-      {
-        return false;
-      }
-      else 
-      {
-        return true;
-      }
-
+     boolean hasUppercase = !str.equals(str.toLowerCase());
+     if(!hasUppercase) {return false;} else{return true;} 
    }
 
    /**
@@ -55,15 +47,8 @@ public class PasswordVerifier
    
    private static boolean hasLowerCase(String str)
    {
-       boolean huc = str.equals(str.toLowerCase());
-      if(huc)
-      {
-        return false;
-      }
-      else 
-      {
-        return true;
-      }
+      boolean hasLowerCase = !str.equals(str.toUpperCase());
+     if(!hasLowerCase) {return false;} else{return true;} 
    }
    
      
@@ -74,15 +59,10 @@ public class PasswordVerifier
    
    private static boolean hasDigit(String str)
    {
-      boolean huc = str.matches(".*\\d+.*");
-      if(huc.matches(".*[0-9].*")
-      {
-        return false;
-      }
-      else 
-      {
-        return true;
-      }
-     
-   }
+     if(str.matches(".*\\d.*")){
+       return true;
+} else{
+   return false;
+}
+}
 }
